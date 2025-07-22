@@ -1,6 +1,9 @@
 {% extends 'main.html' %}
 
 {% block content%}
+
+<img src="{{ project.featured_image.url }}" alt="{{ project.title }}" style="max-width:500px; height:auto;">
+
 <h1> {{project.title}} </h1>
 <hr>
 {% for tag in project.tags.all %}
@@ -11,3 +14,4 @@
 <p> {{project.description}} </p>
 
 {% endblock content %}
+
