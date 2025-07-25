@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 import uuid
 
+
+
 # Create your models here.
 
 class Profile(models.Model):
@@ -21,7 +23,7 @@ class Profile(models.Model):
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 
     def __str__(self):
-        return self.user.username
+        return self.username
 
 
 class Skill(models.Model):
@@ -33,4 +35,7 @@ class Skill(models.Model):
 
     def __str__(self):
         return self.name
+    
+
+
 
