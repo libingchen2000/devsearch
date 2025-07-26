@@ -14,3 +14,9 @@ class CustomUserCreationForm(UserCreationForm):
             'password1': 'Password',
             'password2': 'Confirm Password'
         }
+
+    def __init__(self, *args, **kwargs):
+        super(CustomUserCreationForm, self).__init__(*args, **kwargs)
+
+        for name, field in self.fields.items():
+            field.widget.attrs.update({'class':'input'})
